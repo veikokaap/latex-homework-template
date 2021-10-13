@@ -1,0 +1,129 @@
+\documentclass{src/style/main-style}
+\input{src/macros/macros}
+
+\title{Paper template}
+
+%%% BEGIN DOCUMENT
+\begin{document}
+
+% BEGIN TITLE PAGE
+\thispagestyle{empty}
+\begin{center}
+
+  \large
+  Tallinn University of Technology\\[2mm]
+  School of Information Technologies\\
+  Cybersecurity Curriculum\\[2mm]
+
+  %\vspace*{\stretch{5}}
+  \vspace{25mm}
+
+  \Large Veiko Kääp
+
+  \vspace{4mm}
+
+  \huge \articleName
+
+  %\vspace*{\stretch{7}}
+  \vspace{20mm}
+
+  \Large Some subtitle
+
+\end{center}
+
+\vspace{2mm}
+
+\begin{flushright}
+  {
+    \setlength{\extrarowheight}{5pt}
+    \begin{tabular}{r l}
+      \sffamily Possible supervisor:        & \sffamily Some name, PhD       \\
+      \sffamily Another awesome supervisor: & \sffamily Some other name, MSc
+    \end{tabular}
+  }
+\end{flushright}
+
+%\vspace*{\stretch{3}}
+\vspace{10mm}
+
+%{\noindent Author: .................................................................................... ``.....'' ..........\hskip16pt 2048}
+\vspace{2mm}
+
+
+%{\noindent Supervisor: ............................................................................... ``.....'' ..........\hskip16pt 2048}
+
+\vspace{2mm}
+
+%{\noindent Supervisor: ............................................................................... ``.....'' ..........\hskip16pt 2048}
+
+\vspace{8mm}
+
+
+\vfill
+\centerline{Tallinn 2021}
+
+% END TITLE PAGE
+
+% Remember to remove this from the final version
+\pagebreak
+\listoftodos[Todos]
+% END OF TODO PAGE 
+
+% COMPULSORY INFO PAGE
+\pagebreak
+
+\selectlanguage{english}
+\noindent\textbf{\large \articleName}
+\vspace*{3ex}
+\begin{flushleft}
+  \textbf{Abstract:}
+  Some abstract text
+
+\end{flushleft}
+
+
+\vspace*{3ex}
+\begin{flushleft}
+  \textbf{Keywords:} Some keywords
+\end{flushleft}
+\vspace*{3ex}
+
+\noindent\textbf{CERCS:} Some Cercs
+
+\newpage
+
+\tableofcontents
+
+\pagebreak
+
+
+%Introduction
+\section{Introduction}
+\subfile{src/introduction/introduction.tex}
+
+\pagebreak
+
+\section{Section 1}
+\label{sec:section_1}
+\subfile{src/sections/section_1.tex}
+
+\clearpage
+\section{Conclusion}
+
+\subfile{src/conclusion/conclusion.tex}
+
+\newpage
+
+\bibliography{src/bib/main}{}
+\bibliographystyle{unsrt}
+
+\newpage
+
+\appendix
+\section*{Appendices}
+\addcontentsline{toc}{section}{Appendices}
+% So that appendices would be named by letters
+\renewcommand{\thesubsection}{\Alph{subsection}}
+\subfile{src/appendix/appendix.tex}
+
+\end{document}

@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  latex-build:
+    image: blang/latex:ubuntu
+    network_mode: "none"
+    working_dir: "/latex"
+    command: ["make", "local"]
+    user: "${UID}:${GID}"
+    volumes:
+      - ../:/latex:rw
